@@ -1,0 +1,24 @@
+<app-navbar [save]="save"></app-navbar>
+<div class="container pt-5">
+    <div class="row justify-content-sm-center">
+      <div class="col-sm-10 col-md-6">
+        <div class="card border-info">
+          <div class="card-header">Login</div>
+          <div class="card-body">
+            <div class="row">              
+              <div class="col-md-12">
+                <!-- <form> -->
+                  <input type="text" class="form-control mb-2" #userEmail placeholder="Email" required autofocus>
+                  <input type="password" class="form-control mb-2" #userPassword placeholder="Password" required>
+                  <button class="btn btn-lg btn-outline-success btn-block mb-1" (click)="authService.SignIn(userEmail.value, userPassword.value)">Login</button>
+                  <div style="padding-top: 1rem;">
+                    <a [routerLink]="['/resetPass']" style="margin: 0;">Olvidé mi Contraseña!</a>
+                  </div>
+                <!-- </form> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

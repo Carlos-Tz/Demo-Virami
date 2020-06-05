@@ -1,0 +1,36 @@
+<app-navbar [save]="save"></app-navbar>
+<div class="container pt-5">
+    <div class="row justify-content-sm-center">
+        <div class="col-sm-12 col-md-8">
+            <div class="card">
+                <div class="card-body">
+                    <!-- <h5 class="card-title">VIRAMI</h5> -->
+                    <p class="card-subtitle h5" style="text-align: center;">INGRESE LOS SIGUIENTES DATOS</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <input type="text" class="form-control mb-2" #nameC placeholder="Nombre del cliente" required>
+                        </li>
+                        <li class="list-group-item">
+                            <input type="text" class="form-control mb-2" #curpC placeholder="CURP" required>
+                        </li>
+                        <li class="list-group-item">
+                            <input type="text" class="form-control mb-2" #telC placeholder="Teléfono o Celular" required>
+                        </li>
+                        <li class="list-group-item">
+                            <input type="text" class="form-control mb-2" #credC placeholder="Crédito" required>
+                        </li>
+                        <li class="list-group-item">
+                            <input type="text" class="form-control mb-2" #monC placeholder="Monto del crédito" required>
+                        </li>
+                        <li class="list-group-item">
+                            <input type="text" class="form-control mb-2" #obsC placeholder="Observaciones" required>
+                        </li>
+                        <li class="list-group-item">
+                            <button class="btn btn-outline-success btn-block" type="button">Guardar</button>
+                        </li>
+                      </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

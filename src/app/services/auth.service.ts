@@ -11,6 +11,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class AuthService {
   userData: any;
+  userName = '';
 
   constructor(
     public afs: AngularFirestore,
@@ -21,11 +22,13 @@ export class AuthService {
   ) {
     this.afAuth.authState.subscribe(user => {
       if (user) {
-        this.userData = user;
+        this.userData = user.email;
+        this.userName = user.email;
         localStorage.setItem('user', JSON.stringify(this.userData));
         JSON.parse(localStorage.getItem('user'));
       } else {
         localStorage.setItem('user', null);
+        this.userName = '';
         JSON.parse(localStorage.getItem('user'));
       }
     });

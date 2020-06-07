@@ -16,6 +16,6 @@
       </ul>  -->
       <a class="nav-link btn ml-auto" [routerLink]="['/']">Inicio</a>
       <a class="nav-link btn" [routerLink]="['/panel']">Panel</a>
-      <a *ngIf="save==2" class="nav-link btn" (click)='authService.SignOut()'>Salir</a>     
+      <a *ngIf="save==2" class="nav-link btn" (click)='authService.SignOut()'>Salir <span *ngIf="this.authService.userName">({{this.authService.userName}}) </span></a>     
     </div>
   </nav>

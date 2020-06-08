@@ -18,8 +18,8 @@ export class SecureInnerPagesGuard implements CanActivate {
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
       if (this.authService.isLoggedIn) {
-        //  window.alert("A la página principal!");
-          this.toastr.info('Ya te has autenticado!');
+        console.log('secure autenticado');
+          this.toastr.info('Ya se ha autenticado!');
           this.router.navigate(['']);
         }
       return true;

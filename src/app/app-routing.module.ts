@@ -9,8 +9,8 @@ import { PanelComponent } from './admin/panel/panel.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/', pathMatch: 'full'},
-  {path: '', component: NewRegisterComponent, canActivate: [AuthGuard]},
-  {path: 'panel', component: PanelComponent, canActivate: [AuthGuard]},
+  {path: '', component: PanelComponent, canActivate: [AuthGuard]},
+  {path: 'new', component: NewRegisterComponent, canActivate: [AuthGuard]},
   /* {path: 'edit/:key', component: EditComponent, canActivate: [AuthGuard]}, */
   {path: 'login', component: LoginComponent, canActivate: [SecureInnerPagesGuard]},
  /*  {path: 'resetPass', component: ResetPassComponent, canActivate: [SecureInnerPagesGuard]} */

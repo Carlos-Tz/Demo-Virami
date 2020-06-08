@@ -43,9 +43,7 @@ export class AuthService {
         });
         this.SetUserData(result.user);
       }).catch((error) => {
-        /* this.toastr.error(error.message); */
         this.toastr.error('Intente otra vez!');
-        // window.alert(error.message);
       });
   }
 

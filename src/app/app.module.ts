@@ -10,6 +10,7 @@ import { VerifyEmailComponent } from './admin/verify-email/verify-email.componen
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from 'src/environments/environment';
 import { ToastrModule } from 'ngx-toastr';
@@ -36,6 +37,7 @@ import { PanelComponent } from './admin/panel/panel.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFirestoreModule,
+    AngularFireDatabaseModule,
     ToastrModule.forRoot()
   ],
   providers: [],

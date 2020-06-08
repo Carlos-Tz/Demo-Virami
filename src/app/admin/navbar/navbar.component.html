@@ -14,8 +14,9 @@
           <a class="nav-link btn" (click)='authService.SignOut()'>Salir</a>
         </li>
       </ul>  -->
-      <a class="nav-link btn ml-auto" [routerLink]="['/']">Inicio</a>
-      <a class="nav-link btn" [routerLink]="['/panel']">Panel</a>
-      <a *ngIf="save==2" class="nav-link btn" (click)='authService.SignOut()'>Salir <span *ngIf="this.authService.userName">({{this.authService.userName}}) </span></a>     
+      <a class="nav-link btn ml-auto" [routerLink]="['/']">Panel</a>
+      <a class="nav-link btn" [routerLink]="['/new']">Nuevo</a>
+      <a *ngIf="save==2" class="nav-link btn" (click)='authService.SignOut()'>Salir </a>
+      <span *ngIf="this.authService.userName" class="nav-link btn">({{this.authService.userName}}) </span>           
     </div>
   </nav>

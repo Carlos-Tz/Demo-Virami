@@ -15,13 +15,11 @@ export class AuthGuard implements CanActivate {
   ) {}
   canActivate(
     next: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+    state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
       if (this.authService.isLoggedIn !== true) {
         this.toastr.warning('Necesita autenticarse!');
         this.router.navigate(['login']);
-      }/*  else {
-        this.router.navigate(['']);
-      } */
+      }
       return true;
   }
 }

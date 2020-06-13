@@ -9,6 +9,7 @@ import { ForgotPasswordComponent } from './admin/forgot-password/forgot-password
 import { VerifyEmailComponent } from './admin/verify-email/verify-email.component';
 
 import { AngularFireModule } from '@angular/fire';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
@@ -18,6 +19,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NewRegisterComponent } from './admin/new-register/new-register.component';
 import { NavbarComponent } from './admin/navbar/navbar.component';
 import { PanelComponent } from './admin/panel/panel.component';
+import { MatInputModule, MatPaginatorModule, MatProgressSpinnerModule, MatSortModule, MatTableModule, MatFormFieldModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -34,10 +36,18 @@ import { PanelComponent } from './admin/panel/panel.component';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFirestoreModule,
     AngularFireDatabaseModule,
+    MatInputModule,
+    MatPaginatorModule,
+    MatProgressSpinnerModule,
+    MatSortModule,
+    MatTableModule,
+    MatFormFieldModule,
     ToastrModule.forRoot()
   ],
   providers: [],

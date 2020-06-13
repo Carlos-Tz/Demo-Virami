@@ -1,5 +1,5 @@
 <app-navbar [save]="save"></app-navbar>
-<div class="container pt-5">
+<div class="pt-5">
     <div class="row justify-content-sm-center">
         <div class="col sm-12 md-8">
             <div class="card">
@@ -7,6 +7,46 @@
                     <p class="card-title h5" style="text-align: center;">
                         PANEL DE USUARIO
                     </p>
+                        <mat-form-field>
+                          <input matInput type="text" (keyup)="doFilter($event.target.value)" placeholder="Buscar">
+                        </mat-form-field>
+                    <div class="container" *ngIf="data">
+                        <mat-table class="mat-elevation-z8" [dataSource]="dataSource" matSort matSortActive="fecha" matSortDirection="asc" matSortDisableClear>
+
+                            <ng-container matColumnDef="fecha">
+                                <mat-header-cell *matHeaderCellDef mat-sort-header>Fecha</mat-header-cell>
+                                <mat-cell *matCellDef="let element">{{element.fecha}}</mat-cell>
+                            </ng-container>
+
+                            <ng-container matColumnDef="nombre">
+                                <mat-header-cell *matHeaderCellDef mat-sort-header>Nombre</mat-header-cell>
+                                <mat-cell *matCellDef="let element">{{element.nombre}}
+                                </mat-cell>
+
+                            </ng-container>
+
+                            <ng-container matColumnDef="tel">
+                                <mat-header-cell *matHeaderCellDef>Teléfono</mat-header-cell>
+                                <mat-cell *matCellDef="let element">{{element.tel}}</mat-cell>
+                            </ng-container>
+
+                            <ng-container matColumnDef="action">
+                                <mat-header-cell *matHeaderCellDef> Acción </mat-header-cell>
+                                <mat-cell *matCellDef="let element; let i = index;">
+                                    <!-- <button mat-raised-button color="primary" class="push-right"
+                                [routerLink]="['/edit-book/', element.$key]">Edit</button> -->
+                                    <button mat-raised-button color="accent">Delete</button>
+                                    <!-- <button mat-raised-button color="accent" (click)="deleteBook(i, element)">Delete</button> -->
+                                </mat-cell>
+                            </ng-container>
+
+                            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+
+                            <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+
+                        </mat-table>
+                        <mat-paginator [pageSizeOptions]="[10, 20]" showFirstLastButtons></mat-paginator>
+                    </div>
                 </div>
             </div>
         </div>
